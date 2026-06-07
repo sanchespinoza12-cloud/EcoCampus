@@ -1,0 +1,2134 @@
+/* =====================================================
+   EC CAMPUS - STYLES.CSS
+   PARTE 1
+   VARIABLES + RESET + BODY + HEADER + HERO + FOOTER
+===================================================== */
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+
+    --primary:#2ecc71;
+    --primary-hover:#27ae60;
+
+    --secondary:#3498db;
+    --secondary-hover:#2980b9;
+
+    --green-dark:#2c533d;
+    --green-light:#8cb08d;
+
+    --white:#ffffff;
+    --text-light:#f5f5f5;
+    --text-muted:#d6d6d6;
+
+    --glass-bg:rgba(255,255,255,0.08);
+    --glass-border:rgba(255,255,255,0.18);
+
+    --shadow:
+    0 8px 32px rgba(0,0,0,.25);
+
+    --radius:20px;
+
+    --transition:.3s ease;
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f2027,
+        #203a43,
+        #2c5364
+    );
+
+    color:var(--white);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#10232b;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--green-light);
+    border-radius:50px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--primary);
+}
+
+/* =====================================================
+   BACKGROUND SHAPES
+===================================================== */
+
+.bg-shape{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(90px);
+    z-index:-1;
+}
+
+.shape-1{
+
+    width:400px;
+    height:400px;
+
+    background:
+    rgba(46,204,113,.25);
+
+    top:-100px;
+    left:-100px;
+}
+
+.shape-2{
+
+    width:450px;
+    height:450px;
+
+    background:
+    rgba(52,152,219,.20);
+
+    right:-100px;
+    bottom:-100px;
+}
+
+.shape-3{
+
+    width:250px;
+    height:250px;
+
+    background:
+    rgba(140,176,141,.25);
+
+    left:40%;
+    top:35%;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+/* =====================================================
+   GLASS EFFECT
+===================================================== */
+
+.glass{
+
+    background:rgba(20,35,45,0.85);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:var(--shadow);
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.glass-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:
+    rgba(15,32,39,.85);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.1);
+}
+
+.header-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.logo i{
+
+    font-size:2.3rem;
+
+    color:var(--primary);
+}
+
+.logo h1{
+
+    font-size:1.6rem;
+
+    font-weight:700;
+}
+
+.logo span{
+
+    display:block;
+
+    font-size:.85rem;
+
+    color:var(--text-muted);
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+}
+
+.navbar a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    transition:var(--transition);
+}
+
+.navbar a:hover{
+
+    background:
+    rgba(255,255,255,.08);
+
+    color:var(--primary);
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px 24px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+    box-shadow:
+    0 0 20px
+    rgba(46,204,113,.35);
+}
+
+.btn-primary:hover{
+
+    background:
+    var(--primary-hover);
+
+    transform:
+    translateY(-3px);
+}
+
+.btn-secondary{
+
+    background:
+    rgba(255,255,255,.10);
+
+    color:white;
+
+    border:
+    1px solid rgba(255,255,255,.15);
+}
+
+.btn-secondary:hover{
+
+    transform:
+    translateY(-3px);
+
+    background:
+    rgba(255,255,255,.18);
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:100px 20px;
+}
+
+.hero-content{
+
+    max-width:850px;
+
+    padding:50px;
+
+    border-radius:30px;
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+    line-height:1.1;
+
+    background:
+    linear-gradient(
+    to right,
+    #ffffff,
+    #8cb08d);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+
+    color:var(--text-muted);
+
+    margin-bottom:35px;
+}
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+
+    text-align:center;
+
+    font-size:2.8rem;
+
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+
+    text-align:center;
+
+    color:var(--text-muted);
+
+    margin-bottom:60px;
+
+    font-size:1.1rem;
+}
+
+/* =====================================================
+   GENERIC SECTION
+===================================================== */
+
+section{
+
+    padding:100px 20px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    margin-top:100px;
+
+    padding:50px 20px;
+
+    text-align:center;
+
+    background:
+    rgba(0,0,0,.25);
+
+    border-top:
+    1px solid rgba(255,255,255,.1);
+}
+
+.footer h3{
+
+    margin-bottom:15px;
+
+    color:var(--primary);
+}
+
+.footer p{
+
+    color:var(--text-muted);
+
+    margin-bottom:10px;
+
+    line-height:1.7;
+}
+
+/* =====================================================
+   UTILITIES
+===================================================== */
+
+.text-center{
+    text-align:center;
+}
+
+.mt-1{
+    margin-top:1rem;
+}
+
+.mt-2{
+    margin-top:2rem;
+}
+
+.mt-3{
+    margin-top:3rem;
+}
+
+.hidden{
+    display:none;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .header-content{
+
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .hero-content{
+        padding:30px;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+}
+
+
+/* =====================================================
+   PARTE 2
+   CLASIFICACIÓN + BENEFICIOS + ESTADÍSTICAS
+   CURIOSIDADES + CONSEJOS
+===================================================== */
+
+/* =====================================================
+   CLASIFICACIÓN DE RESIDUOS
+===================================================== */
+
+.classification-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+}
+
+.class-card{
+
+    padding:30px;
+
+    border-radius:25px;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.class-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.25);
+}
+
+.class-card h3{
+
+    margin-bottom:20px;
+
+    font-size:1.5rem;
+}
+
+.class-card ul{
+
+    list-style:none;
+
+    margin-bottom:25px;
+}
+
+.class-card ul li{
+
+    margin-bottom:12px;
+
+    padding-left:10px;
+
+    border-left:
+    3px solid rgba(255,255,255,.3);
+}
+
+.class-card p{
+
+    line-height:1.7;
+
+    color:var(--text-muted);
+}
+
+.class-icon{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+    background:
+    rgba(255,255,255,.08);
+}
+
+/* Colores por categoría */
+
+.organico .class-icon{
+    color:#8d6e63;
+}
+
+.plastico .class-icon{
+    color:#ffd54f;
+}
+
+.papel .class-icon{
+    color:#4fc3f7;
+}
+
+.vidrio .class-icon{
+    color:#81c784;
+}
+
+.card-tag{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    background:
+    rgba(255,255,255,.08);
+}
+
+/* =====================================================
+   BENEFICIOS DEL RECICLAJE
+===================================================== */
+
+.benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.benefit-card{
+
+    text-align:center;
+
+    padding:35px 25px;
+
+    border-radius:25px;
+
+    transition:.4s;
+}
+
+.benefit-card:hover{
+
+    transform:
+    translateY(-8px);
+}
+
+.benefit-card i{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+}
+
+.benefit-card h3{
+
+    margin-bottom:15px;
+}
+
+.benefit-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   ESTADÍSTICAS
+===================================================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.stat-card{
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    transition:.4s;
+}
+
+.stat-card:hover{
+
+    transform:
+    scale(1.05);
+}
+
+.stat-card h3{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+}
+
+.stat-card p{
+
+    color:var(--text-muted);
+}
+
+/* =====================================================
+   BLOQUE DESTACADO
+===================================================== */
+
+.highlight-box{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:40px;
+
+    border-radius:30px;
+}
+
+.highlight-box h2{
+
+    margin-bottom:20px;
+}
+
+.highlight-box p{
+
+    line-height:1.9;
+
+    color:var(--text-muted);
+}
+
+/* =====================================================
+   CURIOSIDADES
+===================================================== */
+
+.facts-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+}
+
+.fact-card{
+
+    padding:30px;
+
+    border-radius:25px;
+
+    transition:.4s;
+
+    line-height:1.8;
+
+    font-size:1rem;
+}
+
+.fact-card:hover{
+
+    transform:
+    translateY(-8px);
+}
+
+.fact-card::before{
+
+    content:"♻️";
+
+    display:block;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+}
+
+/* =====================================================
+   CONSEJOS ECOLÓGICOS
+===================================================== */
+
+.tips-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.tip-card{
+
+    padding:30px;
+
+    border-radius:25px;
+
+    transition:.4s;
+}
+
+.tip-card:hover{
+
+    transform:
+    translateY(-8px);
+}
+
+.tip-card i{
+
+    font-size:2.5rem;
+
+    color:var(--green-light);
+
+    margin-bottom:20px;
+}
+
+.tip-card h3{
+
+    margin-bottom:15px;
+}
+
+.tip-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   FRASE MOTIVADORA
+===================================================== */
+
+.quote-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:30px;
+}
+
+.quote-box p{
+
+    font-size:1.3rem;
+
+    font-style:italic;
+
+    line-height:1.8;
+}
+
+.quote-box span{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:var(--green-light);
+
+    font-weight:600;
+}
+
+/* =====================================================
+   MINI BANNER
+===================================================== */
+
+.banner-info{
+
+    padding:40px;
+
+    border-radius:30px;
+
+    text-align:center;
+}
+
+.banner-info h2{
+
+    margin-bottom:20px;
+}
+
+.banner-info p{
+
+    max-width:800px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    color:var(--text-muted);
+}
+
+/* =====================================================
+   RESPONSIVE EXTRA
+===================================================== */
+
+@media(max-width:768px){
+
+    .classification-grid,
+    .benefits-grid,
+    .stats-grid,
+    .facts-grid,
+    .tips-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .stat-card h3{
+
+        font-size:2.3rem;
+    }
+}
+
+
+/* =====================================================
+   PARTE 3
+   IMPACTO AMBIENTAL + TIMELINE + VIDEO
+   EDUCACIÓN + ACERCA DE
+===================================================== */
+
+/* =====================================================
+   IMPACTO AMBIENTAL
+===================================================== */
+
+.impact-container{
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+.impact-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+}
+
+.impact-card{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    transition:.4s;
+}
+
+.impact-card:hover{
+
+    transform:
+    translateY(-10px);
+}
+
+.impact-card i{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+}
+
+.impact-card h3{
+
+    margin-bottom:15px;
+}
+
+.impact-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   ALERTA AMBIENTAL
+===================================================== */
+
+.alert-box{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    border-left:
+    6px solid var(--primary);
+}
+
+.alert-box h2{
+
+    margin-bottom:20px;
+}
+
+.alert-box p{
+
+    color:var(--text-muted);
+
+    line-height:1.9;
+}
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:auto;
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:var(--green-light);
+
+    transform:translateX(-50%);
+}
+
+.timeline-item{
+
+    position:relative;
+
+    width:50%;
+
+    padding:20px 40px;
+
+    margin-bottom:40px;
+}
+
+.timeline-item:nth-child(odd){
+
+    left:0;
+
+    text-align:right;
+}
+
+.timeline-item:nth-child(even){
+
+    left:50%;
+}
+
+.timeline-content{
+
+    padding:25px;
+
+    border-radius:20px;
+}
+
+.timeline-content h3{
+
+    margin-bottom:10px;
+}
+
+.timeline-content span{
+
+    color:var(--primary);
+
+    font-weight:700;
+}
+
+.timeline-content p{
+
+    color:var(--text-muted);
+
+    margin-top:10px;
+
+    line-height:1.7;
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    width:20px;
+
+    height:20px;
+
+    background:var(--primary);
+
+    border-radius:50%;
+
+    top:30px;
+
+    right:-10px;
+}
+
+.timeline-item:nth-child(even)
+.timeline-dot{
+
+    left:-10px;
+}
+
+/* =====================================================
+   TABLA DE DEGRADACIÓN
+===================================================== */
+
+.degradation-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:20px;
+}
+
+.degradation-table th{
+
+    background:var(--green-dark);
+
+    padding:18px;
+
+    text-align:left;
+}
+
+.degradation-table td{
+
+    padding:18px;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+}
+
+.degradation-table tr:hover{
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+/* =====================================================
+   VIDEO EDUCATIVO
+===================================================== */
+
+.video-container{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+.video-info h2{
+
+    margin-bottom:20px;
+}
+
+.video-info p{
+
+    line-height:1.9;
+
+    color:var(--text-muted);
+
+    margin-bottom:20px;
+}
+
+.video-info ul{
+
+    list-style:none;
+}
+
+.video-info ul li{
+
+    margin-bottom:15px;
+}
+
+.video-frame iframe{
+
+    width:100%;
+
+    height:420px;
+
+    border:none;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.3);
+}
+
+/* =====================================================
+   RECURSOS EDUCATIVOS
+===================================================== */
+
+.resources-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.resource-card{
+
+    padding:30px;
+
+    border-radius:25px;
+
+    transition:.4s;
+}
+
+.resource-card:hover{
+
+    transform:
+    translateY(-10px);
+}
+
+.resource-card i{
+
+    font-size:2.5rem;
+
+    color:var(--secondary);
+
+    margin-bottom:20px;
+}
+
+.resource-card h3{
+
+    margin-bottom:15px;
+}
+
+.resource-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   ACERCA DE
+===================================================== */
+
+.about-container{
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+}
+
+.about-card{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    transition:.4s;
+}
+
+.about-card:hover{
+
+    transform:
+    translateY(-10px);
+}
+
+.about-card i{
+
+    font-size:3rem;
+
+    color:var(--green-light);
+
+    margin-bottom:20px;
+}
+
+.about-card h3{
+
+    margin-bottom:15px;
+}
+
+.about-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   MISIÓN Y VISIÓN
+===================================================== */
+
+.mission-vision{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:30px;
+}
+
+.mv-card{
+
+    padding:40px;
+
+    border-radius:25px;
+}
+
+.mv-card h2{
+
+    margin-bottom:20px;
+
+    color:var(--primary);
+}
+
+.mv-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.9;
+}
+
+/* =====================================================
+   CRÉDITOS
+===================================================== */
+
+.credits{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.credits-card{
+
+    padding:40px;
+
+    border-radius:30px;
+}
+
+.credits-card h2{
+
+    margin-bottom:20px;
+}
+
+.credits-card p{
+
+    line-height:1.9;
+
+    color:var(--text-muted);
+}
+
+.credits-card ul{
+
+    list-style:none;
+
+    margin-top:20px;
+}
+
+.credits-card ul li{
+
+    margin-bottom:12px;
+}
+
+/* =====================================================
+   CTA FINAL
+===================================================== */
+
+.cta-section{
+
+    text-align:center;
+
+    padding:80px 30px;
+
+    border-radius:30px;
+}
+
+.cta-section h2{
+
+    margin-bottom:20px;
+
+    font-size:2.5rem;
+}
+
+.cta-section p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .video-container{
+
+        grid-template-columns:1fr;
+    }
+
+    .video-frame iframe{
+
+        height:300px;
+    }
+
+    .timeline::before{
+
+        left:20px;
+    }
+
+    .timeline-item{
+
+        width:100%;
+
+        left:0 !important;
+
+        padding-left:60px;
+
+        text-align:left !important;
+    }
+
+    .timeline-dot{
+
+        left:10px !important;
+
+        right:auto;
+    }
+}
+
+@media(max-width:600px){
+
+    .cta-section h2{
+
+        font-size:2rem;
+    }
+
+    .video-frame iframe{
+
+        height:250px;
+    }
+}
+
+
+/* =====================================================
+   PARTE 4
+   JUEGO DE RECICLAJE
+===================================================== */
+
+/* =====================================================
+   GAME HERO
+===================================================== */
+
+.game-hero{
+
+    text-align:center;
+
+    padding:60px 20px;
+}
+
+.game-hero h1{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+}
+
+.game-hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   GAME CONTAINER
+===================================================== */
+
+.game-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    position:relative;
+}
+
+/* =====================================================
+   GAME STATS
+===================================================== */
+
+.game-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    margin-bottom:40px;
+}
+
+.stat-box{
+
+    min-width:220px;
+
+    text-align:center;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.10);
+}
+
+.stat-box i{
+
+    color:var(--primary);
+
+    margin-right:10px;
+}
+
+.stat-box span{
+
+    font-weight:700;
+
+    color:var(--primary);
+}
+
+/* =====================================================
+   GAME AREA
+===================================================== */
+
+.game-area{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:40px;
+}
+
+/* =====================================================
+   TRASH ITEMS
+===================================================== */
+
+.trash-items-container{
+
+    min-height:150px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    border:
+    2px dashed rgba(255,255,255,.20);
+
+    background:
+    rgba(255,255,255,.03);
+}
+
+.trash-item{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:3rem;
+
+    cursor:grab;
+
+    user-select:none;
+
+    transition:.3s;
+
+    background:
+    rgba(255,255,255,.10);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+}
+
+.trash-item:hover{
+
+    transform:
+    scale(1.1);
+}
+
+.trash-item:active{
+
+    cursor:grabbing;
+}
+
+.trash-item.dragging{
+
+    opacity:.4;
+
+    transform:scale(.9);
+}
+
+/* =====================================================
+   BINS
+===================================================== */
+
+.bins-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:25px;
+}
+
+.bin{
+
+    height:220px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    font-weight:700;
+
+    font-size:1.1rem;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+.bin::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:18px;
+
+    background:
+    rgba(255,255,255,.15);
+}
+
+.bin i{
+
+    font-size:4rem;
+}
+
+/* =====================================================
+   BIN COLORS
+===================================================== */
+
+.bin-organico{
+
+    border:
+    3px solid #8d6e63;
+
+    color:#8d6e63;
+}
+
+.bin-plastico{
+
+    border:
+    3px solid #ffd54f;
+
+    color:#ffd54f;
+}
+
+.bin-papel{
+
+    border:
+    3px solid #4fc3f7;
+
+    color:#4fc3f7;
+}
+
+.bin-vidrio{
+
+    border:
+    3px solid #81c784;
+
+    color:#81c784;
+}
+
+/* =====================================================
+   BIN HOVER
+===================================================== */
+
+.bin:hover{
+
+    transform:
+    translateY(-8px);
+
+    background:
+    rgba(255,255,255,.08);
+}
+
+.bin.drag-over{
+
+    transform:
+    scale(1.05);
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,.25);
+}
+
+/* =====================================================
+   OVERLAYS
+===================================================== */
+
+.game-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:20px;
+
+    border-radius:30px;
+
+    background:
+    rgba(0,0,0,.75);
+
+    backdrop-filter:blur(10px);
+
+    z-index:50;
+}
+
+.game-overlay h2{
+
+    font-size:3rem;
+}
+
+.game-overlay p{
+
+    font-size:1.2rem;
+}
+
+.hidden{
+
+    display:none !important;
+}
+
+/* =====================================================
+   START BUTTON
+===================================================== */
+
+.start-btn{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    background:var(--primary);
+
+    color:white;
+
+    transition:.3s;
+}
+
+.start-btn:hover{
+
+    background:var(--primary-hover);
+
+    transform:
+    translateY(-3px);
+}
+
+/* =====================================================
+   SUCCESS EFFECT
+===================================================== */
+
+@keyframes correctDrop{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+.correct{
+
+    animation:
+    correctDrop .5s ease;
+
+    box-shadow:
+    0 0 30px var(--primary);
+}
+
+/* =====================================================
+   ERROR EFFECT
+===================================================== */
+
+@keyframes wrongDrop{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-10px);
+    }
+
+    50%{
+        transform:translateX(10px);
+    }
+
+    75%{
+        transform:translateX(-10px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+}
+
+.wrong{
+
+    animation:
+    wrongDrop .4s ease;
+
+    box-shadow:
+    0 0 25px #e74c3c;
+}
+
+/* =====================================================
+   FINAL SCORE CARD
+===================================================== */
+
+.final-score{
+
+    font-size:4rem;
+
+    color:var(--primary);
+
+    font-weight:700;
+}
+
+/* =====================================================
+   GAME INSTRUCTIONS
+===================================================== */
+
+.instructions{
+
+    max-width:900px;
+
+    margin:0 auto 40px;
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:25px;
+}
+
+.instructions h2{
+
+    margin-bottom:20px;
+}
+
+.instructions ul{
+
+    list-style:none;
+}
+
+.instructions li{
+
+    margin-bottom:12px;
+
+    color:var(--text-muted);
+}
+
+/* =====================================================
+   RESPONSIVE GAME
+===================================================== */
+
+@media(max-width:900px){
+
+    .bins-container{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .game-overlay h2{
+
+        font-size:2rem;
+    }
+}
+
+@media(max-width:600px){
+
+    .game-hero h1{
+
+        font-size:2rem;
+    }
+
+    .trash-item{
+
+        width:70px;
+
+        height:70px;
+
+        font-size:2rem;
+    }
+
+    .bin{
+
+        height:170px;
+
+        font-size:.95rem;
+    }
+
+    .bin i{
+
+        font-size:3rem;
+    }
+
+    .bins-container{
+
+        grid-template-columns:1fr;
+    }
+
+    .stat-box{
+
+        min-width:100%;
+    }
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        background:none;
+
+        -webkit-text-fill-color:white;
+
+        color:white;
+
+        font-size:2.2rem;
+
+        line-height:1.2;
+    }
+
+    .hero p{
+
+        color:#f5f5f5;
+
+        font-weight:500;
+    }
+
+}
